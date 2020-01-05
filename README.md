@@ -1,7 +1,13 @@
 # RAINTREE HOMEWORK
 
 Task completed using Java and Maven.  
-You can run compiled JAR from '\build' folder using command promt:  
+You can compile JAR using Maven commands:  
+
+```
+mvn clean
+mvn install 
+```
+After that you car run compiled JAR from '/target' folder using command promt:
 
 ```
 java -jar NumbersGenerator.jar <fileName> <fileSizeMb> 
