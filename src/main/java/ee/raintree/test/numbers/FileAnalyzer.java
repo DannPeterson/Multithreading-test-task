@@ -17,7 +17,7 @@ import java.util.concurrent.Future;
 import ee.raintree.test.numbers.utils.MapListUtils;
 import ee.raintree.test.numbers.utils.MathUtils;
 
-public class FileAnalyzerMT {
+public class FileAnalyzer {
     private static final char SEPARATOR = ' ';
     private static final int PRIME_INDEX = 0;
     private static final int ARMSTRONG_INDEX = 1;
@@ -29,7 +29,7 @@ public class FileAnalyzerMT {
     private ExecutorService service;
     private int coreCount;
 
-    public FileAnalyzerMT(File file) {
+    public FileAnalyzer(File file) {
         this.file = file;
         this.list = new ArrayList<>();
         this.coreCount = Runtime.getRuntime().availableProcessors();

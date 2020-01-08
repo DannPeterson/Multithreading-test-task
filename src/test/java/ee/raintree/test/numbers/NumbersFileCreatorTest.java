@@ -13,7 +13,7 @@ public class NumbersFileCreatorTest {
 	public void givenFileSizeAndName_whenGetFile_thenGetFile()
 			throws IOException, InterruptedException, ExecutionException {
 		int oneMbSizeInBytes = 10 * 1024 * 1024;
-		NumbersFileCreatorMT nfc = new NumbersFileCreatorMT(oneMbSizeInBytes, "test");
+		NumbersFileCreator nfc = new NumbersFileCreator(oneMbSizeInBytes, "test");
 		File file = nfc.create();
 		file.deleteOnExit();
 

@@ -17,7 +17,7 @@ import java.util.concurrent.Future;
 
 import ee.raintree.test.numbers.utils.IOCopier;
 
-public class NumbersFileCreatorMT {
+public class NumbersFileCreator {
     private static final char SEPARATOR = ' ';
     private File file;
     private Random random;
@@ -26,7 +26,7 @@ public class NumbersFileCreatorMT {
     private List<File> tmpFiles;
     private ExecutorService service;
 
-    public NumbersFileCreatorMT(int size, String fileName) {
+    public NumbersFileCreator(int size, String fileName) {
         this.size = size;
         this.file = new File(fileName);
         this.random = new Random();

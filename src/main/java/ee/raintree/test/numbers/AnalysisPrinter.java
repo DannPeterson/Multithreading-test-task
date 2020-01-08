@@ -8,13 +8,13 @@ import java.util.Map.Entry;
 public class AnalysisPrinter {
     private final static String BAR = "|";
     private final static String SPACE = " ";
-    private FileAnalyzerMT analyzer;
+    private FileAnalyzer analyzer;
     private List<Entry<BigInteger, Integer>> listOfEntries;
     private int chartsCount = 10;
     private int longestEntrySize;
     private int barChartStep;
 
-    public AnalysisPrinter(FileAnalyzerMT analyzer) {
+    public AnalysisPrinter(FileAnalyzer analyzer) {
         this.analyzer = analyzer;
         this.listOfEntries = new ArrayList<>(analyzer.getFreqMap().entrySet());
         if (listOfEntries.size() < chartsCount) {

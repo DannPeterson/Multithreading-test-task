@@ -19,11 +19,11 @@ public class Main {
             fileSize = Integer.valueOf(args[1]) * 1024 * 1024;
         }
 
-        NumbersFileCreatorMT creator = new NumbersFileCreatorMT(fileSize, fileName);
+        NumbersFileCreator creator = new NumbersFileCreator(fileSize, fileName);
         File numbersFile = creator.create();
 
         long analysisStart = System.currentTimeMillis();
-        FileAnalyzerMT analyzer = new FileAnalyzerMT(numbersFile);
+        FileAnalyzer analyzer = new FileAnalyzer(numbersFile);
         analyzer.analyze();
         AnalysisPrinter printer = new AnalysisPrinter(analyzer);
         long analysisEnd = System.currentTimeMillis();
