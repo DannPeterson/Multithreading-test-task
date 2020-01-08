@@ -5,12 +5,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
-public class MapUtils {
+public class MapListUtils {
     public static <T> Map<T, Integer> getSortedFreqMapFromList(List<T> list) {
         Map<T, Integer> map = getFreqMapFromList(list);
         Set<Entry<T, Integer>> entries = map.entrySet();
@@ -21,6 +22,15 @@ public class MapUtils {
             sortedByValue.put(entry.getKey(), entry.getValue());
         }
         return sortedByValue;
+    }
+
+    public static <T> List<List<T>> splitList(List<T> list, int partitionSize) {
+        List<List<T>> partitions = new LinkedList<List<T>>();
+        for (int i = 0; i < list.size(); i += partitionSize) {
+            partitions.add(list.subList(i,
+                    Math.min(i + partitionSize, list.size())));
+        }
+        return partitions;
     }
 
     private static <T> Map<T, Integer> getFreqMapFromList(List<T> list) {

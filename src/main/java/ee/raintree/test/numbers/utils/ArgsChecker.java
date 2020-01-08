@@ -34,7 +34,7 @@ public class ArgsChecker {
             if (file.createNewFile()) {
                 file.delete();
             }
-        } catch (Exception ex) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("Cannot create file with this name, check name for OS filename restricted characters");
         }
     }
